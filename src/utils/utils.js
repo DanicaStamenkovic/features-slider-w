@@ -19,17 +19,19 @@ export function getClientXEvent(event) {
 
 export const catchActiveSlider = (currentTouchPosition, length, setActiveIndex, sliderWidth, activeIndex, sliderRef) => {
     let activeElement;
+    let translateValue;
 
     Math.abs(currentTouchPosition) > 5 && (activeIndex += Math.sign(currentTouchPosition));
-    if (activeIndex < 0 || activeIndex === length ) {
+    if ( activeIndex === length ) {
         activeElement = 0;
-    } else if (activeIndex > length - 1) {
-        activeElement = length - 1; 
+    } else if (activeIndex < 0) {
+        activeElement = length - 1;
+        translateValue = ((length - 1) * sliderWidth);
     } else {
         activeElement = activeIndex;
+        translateValue = Math.min((sliderWidth * activeElement), sliderWidth * (length - 1));
     }
 
-    const translateValue = Math.min((sliderWidth * activeElement), sliderWidth * (length - 1));
     setActiveIndex(activeElement);
     changeTranslate(sliderRef.current, translateValue, 'negative');
 }
