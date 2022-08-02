@@ -1,0 +1,9 @@
+#root {
+  overflow: hidden;
+}
+
+.App {
+  text-align: center;
+  max-width: 1200px;
+  margin: auto;
+}
