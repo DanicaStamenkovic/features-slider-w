@@ -127,7 +127,7 @@
             .btn-slide {
                 width: 30px;
                 height: 30px;
-                background-color: #09070729;
+                background-color: rgba(103, 114, 229, 0.664);
                 border-radius: 50%;
                 padding-top: 2px;
                 border: none;
@@ -139,7 +139,7 @@
                 justify-content: center;
                 align-items: center;
                 cursor: pointer;
-                top: 60%;
+                top: 50%;
                 transform: translateY(-50%);
     
                 &.prev {
@@ -154,6 +154,11 @@
                     border: none;
                     outline: none;
                     box-shadow: none;
+                }
+
+                &:hover {
+                    background-color: rgb(103, 114, 229);
+                    box-shadow: white 0 0 10px;
                 }
             }
 
